@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using HarmonyLib;
+using Sfs2X.Entities;
 using SyncMultiplayer;
 
 namespace NoCollision
@@ -13,9 +14,9 @@ namespace NoCollision
             Harmony.CreateAndPatchAll(typeof(Plugin));
         }
 
-        [HarmonyPatch(typeof(NetGameSubroomsSystem), "SEND_ChangeRoomID")]
+        [HarmonyPatch(typeof(SmartfoxRoomClient), "OnRoomJoined")]
         [HarmonyPostfix]
-        private static void SEND_ChangeRoomID(NetworkPlayer __0, string __1)
+        private static void SEND_ChangeRoomID(Room room)
         {
             GameConsole.SetCollisions(false);
         }
