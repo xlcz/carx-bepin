@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B5CC64E-C2BA-428C-B5B8-0FE20FBDD37A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NoCollision</RootNamespace>
+    <AssemblyName>NoCollision</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>latestmajor</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>$(carx)\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetCore.Decals">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\AssetCore.Decals.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetCore.Foundation">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\AssetCore.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetCore.Scene">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\AssetCore.Scene.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Core">
+      <HintPath>$(carx)\BepInEx\core\BepInEx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Preloader.Core">
+      <HintPath>$(carx)\BepInEx\core\BepInEx.Preloader.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Preloader.Unity">
+      <HintPath>$(carx)\BepInEx\core\BepInEx.Preloader.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Unity">
+      <HintPath>$(carx)\BepInEx\core\BepInEx.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="BestHTTP">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\BestHTTP.dll</HintPath>
+    </Reference>
+    <Reference Include="CarSystems.Runtime">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\CarSystems.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="CarX.Extras.Surface">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\CarX.Extras.Surface.dll</HintPath>
+    </Reference>
+    <Reference Include="CarX.Plugins.Core">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\CarX.Plugins.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Driver">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="Dxt5GpuCompression">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Dxt5GpuCompression.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Win64">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Facepunch.Steamworks.Win64.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnity">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\FMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnityResonance">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\FMODUnityResonance.dll</HintPath>
+    </Reference>
+    <Reference Include="GpuExtensions">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\GpuExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>$(carx)\BepInEx\core\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>$(carx)\BepInEx\core\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>$(carx)\BepInEx\core\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>$(carx)\BepInEx\core\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>$(carx)\BepInEx\core\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>$(carx)\BepInEx\core\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Core">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Rewired_Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Rewired_Windows">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Rewired_Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="SemanticVersioning">
+      <HintPath>$(carx)\BepInEx\core\SemanticVersioning.dll</HintPath>
+    </Reference>
+    <Reference Include="ShadowPassInjection">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\ShadowPassInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartFox2X">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\SmartFox2X.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tayx.Graphy">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Tayx.Graphy.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Burst.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Mdb">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Burst.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Cecil.Rocks">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Jobs">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Jobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.MemoryProfiler">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.MemoryProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Subsystem.Registration">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Subsystem.Registration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.CoreUtils">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.XR.CoreUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Interaction.Toolkit">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.XR.Interaction.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Management">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.XR.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.XR.OpenXR.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.ConformanceAutomation">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.XR.OpenXR.Features.ConformanceAutomation.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.MockRuntime">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.XR.OpenXR.Features.MockRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.OculusQuestSupport">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.XR.OpenXR.Features.OculusQuestSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\Unity.XR.OpenXR.Features.RuntimeDebugger.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.GIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.TextCoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsNativeModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UIElementsNativeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UNETModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityUIExtensions">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\UnityUIExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="XDSRace">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\XDSRace.dll</HintPath>
+    </Reference>
+    <Reference Include="ZKWCryptoPlayerPrefs">
+      <HintPath>$(carx)\Drift Racing Online_Data\Managed\ZKWCryptoPlayerPrefs.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
