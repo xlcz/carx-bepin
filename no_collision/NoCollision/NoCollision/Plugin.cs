@@ -16,7 +16,7 @@ namespace NoCollision
 
         [HarmonyPatch(typeof(SmartfoxRoomClient), "OnRoomJoined")]
         [HarmonyPostfix]
-        private static void SEND_ChangeRoomID(Room room)
+        private static void OnRoomJoined(Room room)
         {
             GameConsole.SetCollisions(false);
         }
